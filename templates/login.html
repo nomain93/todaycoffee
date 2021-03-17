@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+{# 부모 템플렛 정보 가져오기 #}
+{% extends 'base.html' %}
+{# 타이틀 넘김 #}
+{% block title %} 로그인 | 오늘의 커피 {% endblock %}
+{# 타일틀 넘김 끝 #}
+{# 헤더 정보 넘김 #}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{# 헤더 정보 넘김 끝 #}
+{# 바디 정보 넘김 #}
+{% block content %}
+    <div class="wrap">
+
+        {# banner #}
+        <section class="hero is-bold is-medium">
+            <div class="buttons are-midium login">
+                <button class="button is-outlined is-light" onclick="window.location.href='/login'">로그인</button>
+            </div>
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title white main-title" onclick="window.location.href='/'" style="cursor:pointer">
+                        오늘의 커피
+                    </h1>
+                    <h2 class="subtitle white">
+                        로그인페이지
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        {# login start #}
+        <section class="section">
+            <div class="container">
+                <div class="box" style="max-width: 480px;margin:auto">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <div class="field has-addons">
+                                    <div class="control has-icons-left" style="width:100%">
+                                        <input id="input-username" class="input" type="text" placeholder="아이디">
+                                        <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+                                    </div>
+                                </div>
+                                <p id="help-id-login" class="help is-danger"></p>
+                                <div class="field">
+                                    <div class="control has-icons-left">
+                                        <input id="input-password" class="input" type="password" placeholder="비밀번호">
+                                        <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                    <p id="help-password-login" class="help is-danger"></p>
+
+                                </div>
+
+                            </div>
+                            <div id="div-sign-in-or-up" class="has-text-centered">
+                                <nav class="level is-mobile">
+                                    <button class="level-item button is-sparta" onclick="sign_in()">
+                                        로그인
+                                    </button>
+
+                                </nav>
+                                <hr>
+                                <h4 class="mb-3">아직 회원이 아니라면</h4>
+                                <nav class="level is-mobile">
+
+                                    <button class="level-item button is-sparta is-outlined"
+                                            onclick="window.location.href='/register'">
+                                        회원가입하기
+                                    </button>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+

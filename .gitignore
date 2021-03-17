@@ -1,0 +1,14 @@
+# IDE
+.idea
+
+# sercurity
+setting_info.py
+
+# Mac
+.DS_Store
+
+# python
+venv/
+__pycache__
+
+
